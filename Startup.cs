@@ -5,6 +5,8 @@ using Microsoft.OpenApi.Models;
 
 public class Startup
 {
+    Boolean _clearData;
+
     public Startup(IConfiguration configuration)
     {
         Configuration = configuration;
@@ -46,6 +48,9 @@ public class Startup
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Super Great Web API v1");
                 c.RoutePrefix = string.Empty; // Set Swagger UI at the root
             });
+
+            // Clear database before seeding if in development. Subject to change.
+            _clearData = true;
         }
         else
         {
@@ -68,6 +73,6 @@ public class Startup
         });
 
         dbContext.Database.Migrate();
-        DbInitializer.Initialize(dbContext);
+        DbInitializer.Initialize(dbContext, _clearData);
     }
 }
