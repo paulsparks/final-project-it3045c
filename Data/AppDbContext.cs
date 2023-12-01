@@ -16,17 +16,5 @@ namespace final_project_it3045c.Data
         {
             base.OnModelCreating(modelBuilder);
         }
-
-        // public void SeedDatabase() {
-        //     Console.WriteLine("SeedDatabase Called!");
-        //     var modelBuilder = new ModelBuilder(new ConventionSet());
-        //     // TODO: GET DATA TO SEED!!!!!!!!!!!!!! IT WON'T SEED!!!!!!!!
-        //     modelBuilder.Entity<TeamMember>().HasData(
-        //         new TeamMember { Id = 1, FullName = "Paul Sparks" }
-        //         // Add more seed data as needed
-        //     );
-
-        //     SaveChanges();
-        // }
     }
 }
