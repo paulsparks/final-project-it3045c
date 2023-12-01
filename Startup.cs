@@ -28,11 +28,12 @@ public class Startup
         });
 
         services.AddDbContext<AppDbContext>(options =>
-        options.UseSqlServer(Configuration.GetConnectionString("DatabaseConnection")));
+            options.UseSqlServer(Configuration.GetConnectionString("DatabaseConnection"))
+        );
 
     }
 
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env, AppDbContext dbContext)
     {
         if (env.IsDevelopment())
         {
@@ -65,5 +66,8 @@ public class Startup
         {
             endpoints.MapControllers();
         });
+
+        dbContext.Database.Migrate();
+        DbInitializer.Initialize(dbContext);
     }
 }
