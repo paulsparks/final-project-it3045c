@@ -2,7 +2,7 @@ using System.Globalization;
 using final_project_it3045c.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-
+// test comment
 public class Startup
 {
     bool _clearData;
