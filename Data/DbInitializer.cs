@@ -1,12 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using final_project_it3045c.Models;
-using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace final_project_it3045c.Data
 {
     public class DbInitializer
     {
-        public static void Initialize(AppDbContext dbContext, Boolean isCleared)
+        public static void Initialize(AppDbContext dbContext, bool isCleared)
         {
             if (isCleared) {
                 ClearData(dbContext);
@@ -34,7 +33,16 @@ namespace final_project_it3045c.Data
                 // Add more seed data as needed
             };
 
+            var memberDetails = new List<MemberDetails>
+            {
+                new() {
+                    FavoriteFood = "Pad Thai"
+                }
+            };
+
             dbContext.TeamMembers.AddRange(teamMembers);
+            dbContext.MemberDetails.AddRange(memberDetails);
+
             dbContext.SaveChanges();
         }
 
@@ -42,9 +50,12 @@ namespace final_project_it3045c.Data
         {
             // Reset identity to 1
             dbContext.Database.ExecuteSqlRaw("DBCC CHECKIDENT('dbo.TeamMembers', RESEED, 0)");
+            dbContext.Database.ExecuteSqlRaw("DBCC CHECKIDENT('dbo.MemberDetails', RESEED, 0)");
 
-            // Delete all records from TeamMembers table
+            // Delete all records
             dbContext.TeamMembers.RemoveRange(dbContext.TeamMembers);
+            dbContext.MemberDetails.RemoveRange(dbContext.MemberDetails);
+
             dbContext.SaveChanges();
         }
 
