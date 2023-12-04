@@ -3,6 +3,7 @@ using final_project_it3045c.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 // test comment
+// test - Andrew
 public class Startup
 {
     bool _clearData;
