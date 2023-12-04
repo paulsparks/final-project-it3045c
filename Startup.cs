@@ -5,7 +5,7 @@ using Microsoft.OpenApi.Models;
 // test comment
 public class Startup
 {
-    Boolean _clearData;
+    bool _clearData;
 
     public Startup(IConfiguration configuration)
     {

@@ -1,12 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using final_project_it3045c.Models;
-using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace final_project_it3045c.Data
 {
     public class DbInitializer
     {
-        public static void Initialize(AppDbContext dbContext, Boolean isCleared)
+        public static void Initialize(AppDbContext dbContext, bool isCleared)
         {
             if (isCleared) {
                 ClearData(dbContext);
@@ -34,7 +33,21 @@ namespace final_project_it3045c.Data
                 // Add more seed data as needed
             };
 
+            var memberDetailsSet = new List<MemberDetails>
+            {
+                new() {
+                    TeamMember = teamMembers.First(),
+                    FavoriteFood = "Pad Thai",
+                    FavoriteColor = "Black",
+                    Age = 19,
+                    FavoriteTVShow = "Breaking Bad",
+                    FavoriteDrink = "Water"
+                }
+            };
+
             dbContext.TeamMembers.AddRange(teamMembers);
+            dbContext.MemberDetailsSet.AddRange(memberDetailsSet);
+
             dbContext.SaveChanges();
         }
 
@@ -42,9 +55,12 @@ namespace final_project_it3045c.Data
         {
             // Reset identity to 1
             dbContext.Database.ExecuteSqlRaw("DBCC CHECKIDENT('dbo.TeamMembers', RESEED, 0)");
+            dbContext.Database.ExecuteSqlRaw("DBCC CHECKIDENT('dbo.MemberDetailsSet', RESEED, 0)");
 
-            // Delete all records from TeamMembers table
+            // Delete all records
             dbContext.TeamMembers.RemoveRange(dbContext.TeamMembers);
+            dbContext.MemberDetailsSet.RemoveRange(dbContext.MemberDetailsSet);
+
             dbContext.SaveChanges();
         }
 
