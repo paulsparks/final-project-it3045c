@@ -35,6 +35,12 @@ namespace final_project_it3045c.Data
                     BirthDate = new DateTime(new DateOnly(2002, 12, 18), new TimeOnly(0)),
                     CollegeProgram = "Information Technology",
                     YearInProgram = "Junior"
+                },
+                new() {
+                    FullName = "Andrew Bagby",
+                    BirthDate = new DateTime(new DateOnly(2004, 5, 10), new TimeOnly(0)),
+                    CollegeProgram = "Information Technology",
+                    YearInProgram = "Sophomore"
                 }
                 // Add more seed data as needed
             };
@@ -56,6 +62,14 @@ namespace final_project_it3045c.Data
                     Age = 20,
                     FavoriteTVShow = "The Office",
                     FavoriteDrink = "Dr. Pepper"
+                },
+                new() {
+                    TeamMember = teamMembers.First(),
+                    FavoriteFood = "Orange Chicken",
+                    FavoriteColor = "Blue",
+                    Age = 19,
+                    FavoriteTVShow = "Parks and Rec",
+                    FavoriteDrink = "Sprite"
                 }
             };
 
