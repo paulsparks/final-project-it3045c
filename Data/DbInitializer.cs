@@ -33,15 +33,20 @@ namespace final_project_it3045c.Data
                 // Add more seed data as needed
             };
 
-            var memberDetails = new List<MemberDetails>
+            var memberDetailsSet = new List<MemberDetails>
             {
                 new() {
-                    FavoriteFood = "Pad Thai"
+                    TeamMember = teamMembers.First(),
+                    FavoriteFood = "Pad Thai",
+                    FavoriteColor = "Black",
+                    Age = 19,
+                    FavoriteTVShow = "Breaking Bad",
+                    FavoriteDrink = "Water"
                 }
             };
 
             dbContext.TeamMembers.AddRange(teamMembers);
-            dbContext.MemberDetails.AddRange(memberDetails);
+            dbContext.MemberDetailsSet.AddRange(memberDetailsSet);
 
             dbContext.SaveChanges();
         }
@@ -50,11 +55,11 @@ namespace final_project_it3045c.Data
         {
             // Reset identity to 1
             dbContext.Database.ExecuteSqlRaw("DBCC CHECKIDENT('dbo.TeamMembers', RESEED, 0)");
-            dbContext.Database.ExecuteSqlRaw("DBCC CHECKIDENT('dbo.MemberDetails', RESEED, 0)");
+            dbContext.Database.ExecuteSqlRaw("DBCC CHECKIDENT('dbo.MemberDetailsSet', RESEED, 0)");
 
             // Delete all records
             dbContext.TeamMembers.RemoveRange(dbContext.TeamMembers);
-            dbContext.MemberDetails.RemoveRange(dbContext.MemberDetails);
+            dbContext.MemberDetailsSet.RemoveRange(dbContext.MemberDetailsSet);
 
             dbContext.SaveChanges();
         }

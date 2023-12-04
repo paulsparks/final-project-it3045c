@@ -1,8 +1,6 @@
 using final_project_it3045c.Data;
 using final_project_it3045c.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -19,18 +17,32 @@ public class TeamMembersController : ControllerBase
     [HttpGet]
     public ActionResult<IEnumerable<TeamMember>> Get()
     {
-        var teamMembers = _context.TeamMembers.ToList();
-        return Ok(teamMembers);
+        var teamMembersList = _context.TeamMembers.ToList();
+        
+        try {
+            return Ok(teamMembersList.GetRange(0, 4));
+        } catch {
+            return Ok(teamMembersList);
+        }
     }
 
     // GET: api/teammembers/1
     [HttpGet("{id}")]
     public ActionResult<TeamMember> Get(int id)
     {
+        var teamMembersList = _context.TeamMembers.ToList();
         var teamMember = _context.TeamMembers.Find(id);
 
-        if (teamMember == null)
+        if (id == 0)
         {
+            try {
+                return Ok(teamMembersList.GetRange(0, 4));
+            } catch {
+                return Ok(teamMembersList);
+            }
+        }
+
+        if (teamMember == null) {
             return NotFound();
         }
 
