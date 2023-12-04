@@ -30,6 +30,12 @@ namespace final_project_it3045c.Data
                     CollegeProgram = "Information Technology",
                     YearInProgram = "Sophomore"
                 },
+                new() {
+                    FullName = "Drake Damron",
+                    BirthDate = new DateTime(new DateOnly(2002, 12, 18), new TimeOnly(0)),
+                    CollegeProgram = "Information Technology",
+                    YearInProgram = "Junior"
+                }
                 // Add more seed data as needed
             };
 
@@ -42,6 +48,14 @@ namespace final_project_it3045c.Data
                     Age = 19,
                     FavoriteTVShow = "Breaking Bad",
                     FavoriteDrink = "Water"
+                },
+                new() {
+                    TeamMember = teamMembers.First(),
+                    FavoriteFood = "Pizza",
+                    FavoriteColor = "Green",
+                    Age = 20,
+                    FavoriteTVShow = "The Office",
+                    FavoriteDrink = "Dr. Pepper"
                 }
             };
 
