@@ -130,11 +130,9 @@ namespace final_project_it3045c.Data
                         LifeSpan = 25,
                         Color = "Brown",
                         Location = "Australia"
-                        // TODO: populate with the newly added properties from Animal.cs after they're added
                     }
                     
 
-                    // TODO: populate this list with 8 more animals
                 };
 
                 dbContext.Animals.AddRange(animals);

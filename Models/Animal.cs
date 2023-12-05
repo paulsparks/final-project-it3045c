@@ -7,5 +7,4 @@ public class Animal
     public int? LifeSpan { get; set; }
     public string? Color { get; set; }
     public string? Location { get; set; }
-    // TODO: add 3 more properties that animals can have
 }
