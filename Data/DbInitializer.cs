@@ -78,9 +78,62 @@ namespace final_project_it3045c.Data
                 var animals = new List<Animal>
                 {
                     new() {
-                        AnimalName = "Lion"
+                        AnimalName = "Lion",
+                        LifeSpan = 8-16,
+                        Color = "Orange",
+                        Location = "South Africa"
+                    },
+                    new() {
+                        AnimalName = "Monkey",
+                        LifeSpan = 15-20,
+                        Color = "Brown",
+                        Location = "Asis/Africa"
+                    },
+                    new() {
+                        AnimalName = "Elephant",
+                        LifeSpan = 48-70,
+                        Color = "Gray/Brown",
+                        Location = "Ais/Africa"
+                    },
+                    new() {
+                        AnimalName = "Zebra",
+                        LifeSpan = 20,
+                        Color = "White/Black",
+                        Location = "South Africa"
+                    },
+                    new() {
+                        AnimalName = "Giraffe",
+                        LifeSpan = 25,
+                        Color = "Orange/Brown",
+                        Location = "Africa"
+                    },
+                    new() {
+                        AnimalName = "Black Bear",
+                        LifeSpan = 30,
+                        Color = "Black",
+                        Location = "Alaska/Canada"
+                    },
+                    new() {
+                        AnimalName = "Deer",
+                        LifeSpan = 10-20,
+                        Color = "Brown",
+                        Location = "Many"
+                    },
+                    new() {
+                        AnimalName = "Moose",
+                        LifeSpan = 15-25,
+                        Color = "Brown",
+                        Location = "Alaska/Canada"
+                    },
+                    new() {
+                        AnimalName = "Kangaroo",
+                        LifeSpan = 8-25,
+                        Color = "Brown",
+                        Location = "Australia"
                         // TODO: populate with the newly added properties from Animal.cs after they're added
                     }
+                    
+
                     // TODO: populate this list with 8 more animals
                 };
 
