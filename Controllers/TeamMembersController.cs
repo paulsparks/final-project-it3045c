@@ -1,4 +1,5 @@
 using final_project_it3045c.Data;
+using final_project_it3045c.HelperFunctions;
 using final_project_it3045c.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -70,7 +71,7 @@ public class TeamMembersController : ControllerBase
             return NotFound();
         }
 
-        existingTeamMember.FullName = updatedTeamMember.FullName; // Update other properties as needed
+        CopyProperties.Copy(updatedTeamMember, existingTeamMember);
 
         _context.SaveChanges();
 

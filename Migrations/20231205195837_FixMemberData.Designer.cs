@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using final_project_it3045c.Data;
 
@@ -11,9 +12,11 @@ using final_project_it3045c.Data;
 namespace final_project_it3045c.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231205195837_FixMemberData")]
+    partial class FixMemberData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,22 +24,6 @@ namespace final_project_it3045c.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("final_project_it3045c.Models.Animal", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("AnimalName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Animals");
-                });
 
             modelBuilder.Entity("final_project_it3045c.Models.MemberDetails", b =>
                 {
@@ -69,25 +56,6 @@ namespace final_project_it3045c.Migrations
                     b.HasIndex("TeamMemberId");
 
                     b.ToTable("MemberDetailsSet");
-                });
-
-            modelBuilder.Entity("final_project_it3045c.Models.StoreItem", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("ItemName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double?>("Price")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("StoreItems");
                 });
 
             modelBuilder.Entity("final_project_it3045c.Models.TeamMember", b =>

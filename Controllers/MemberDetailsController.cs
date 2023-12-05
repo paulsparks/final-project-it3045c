@@ -1,4 +1,5 @@
 using final_project_it3045c.Data;
+using final_project_it3045c.HelperFunctions;
 using final_project_it3045c.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -70,7 +71,7 @@ public class MemberDetailsController : ControllerBase
             return NotFound();
         }
 
-        existingMemberDetails.FavoriteFood = updatedMemberDetails.FavoriteFood; // Update other properties as needed
+        CopyProperties.Copy(updatedMemberDetails, existingMemberDetails);
 
         _context.SaveChanges();
 
