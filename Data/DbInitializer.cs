@@ -79,19 +79,19 @@ namespace final_project_it3045c.Data
                 {
                     new() {
                         AnimalName = "Lion",
-                        LifeSpan = 8-16,
+                        LifeSpan = 16,
                         Color = "Orange",
                         Location = "South Africa"
                     },
                     new() {
                         AnimalName = "Monkey",
-                        LifeSpan = 15-20,
+                        LifeSpan = 20,
                         Color = "Brown",
                         Location = "Asis/Africa"
                     },
                     new() {
                         AnimalName = "Elephant",
-                        LifeSpan = 48-70,
+                        LifeSpan = 70,
                         Color = "Gray/Brown",
                         Location = "Ais/Africa"
                     },
@@ -115,19 +115,19 @@ namespace final_project_it3045c.Data
                     },
                     new() {
                         AnimalName = "Deer",
-                        LifeSpan = 10-20,
+                        LifeSpan = 20,
                         Color = "Brown",
                         Location = "Many"
                     },
                     new() {
                         AnimalName = "Moose",
-                        LifeSpan = 15-25,
+                        LifeSpan = 25,
                         Color = "Brown",
                         Location = "Alaska/Canada"
                     },
                     new() {
                         AnimalName = "Kangaroo",
-                        LifeSpan = 8-25,
+                        LifeSpan = 25,
                         Color = "Brown",
                         Location = "Australia"
                         // TODO: populate with the newly added properties from Animal.cs after they're added
