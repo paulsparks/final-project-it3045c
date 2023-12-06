@@ -21,7 +21,7 @@ public class AnimalsController : ControllerBase
         var animalsList = _context.Animals.ToList();
         
         try {
-            return Ok(animalsList.GetRange(0, 4));
+            return Ok(animalsList.GetRange(0, 5));
         } catch {
             return Ok(animalsList);
         }
@@ -37,7 +37,7 @@ public class AnimalsController : ControllerBase
         if (id == 0)
         {
             try {
-                return Ok(animalsList.GetRange(0, 4));
+                return Ok(animalsList.GetRange(0, 5));
             } catch {
                 return Ok(animalsList);
             }

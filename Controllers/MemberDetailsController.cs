@@ -21,7 +21,7 @@ public class MemberDetailsController : ControllerBase
         var memberDetailsList = _context.MemberDetailsSet.ToList();
 
         try {
-            return Ok(memberDetailsList.GetRange(0, 4));
+            return Ok(memberDetailsList.GetRange(0, 5));
         } catch {
             return Ok(memberDetailsList);
         }
@@ -37,7 +37,7 @@ public class MemberDetailsController : ControllerBase
         if (id == 0)
         {
             try {
-                return Ok(memberDetailsList.GetRange(0, 4));
+                return Ok(memberDetailsList.GetRange(0, 5));
             } catch {
                 return Ok(memberDetailsList);
             }

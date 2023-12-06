@@ -22,7 +22,7 @@ public class StoreItemsController : ControllerBase
 
         try
         {
-            return Ok(storeItemsList.GetRange(0, 4));
+            return Ok(storeItemsList.GetRange(0, 5));
         }
         catch
         {
@@ -41,7 +41,7 @@ public class StoreItemsController : ControllerBase
         {
             try
             {
-                return Ok(storeItemsList.GetRange(0, 4));
+                return Ok(storeItemsList.GetRange(0, 5));
             }
             catch
             {

@@ -21,7 +21,7 @@ public class TeamMembersController : ControllerBase
         var teamMembersList = _context.TeamMembers.ToList();
         
         try {
-            return Ok(teamMembersList.GetRange(0, 4));
+            return Ok(teamMembersList.GetRange(0, 5));
         } catch {
             return Ok(teamMembersList);
         }
@@ -37,7 +37,7 @@ public class TeamMembersController : ControllerBase
         if (id == 0)
         {
             try {
-                return Ok(teamMembersList.GetRange(0, 4));
+                return Ok(teamMembersList.GetRange(0, 5));
             } catch {
                 return Ok(teamMembersList);
             }
