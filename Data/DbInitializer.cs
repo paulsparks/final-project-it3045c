@@ -131,8 +131,6 @@ namespace final_project_it3045c.Data
                         Color = "Brown",
                         Location = "Australia"
                     }
-                    
-
                 };
 
                 dbContext.Animals.AddRange(animals);
@@ -146,9 +144,7 @@ namespace final_project_it3045c.Data
                         Price = 2.99,
                         ItemBrand = "Wonder",
                         Quantity = 1
-                        // TODO: populate with the newly added properties from StoreItem.cs after they're added
                     },
-                    // TODO: populate this list with 4 more store items
                     new() {
                         ItemName = "Hot Dog",
                         Price = 1.99,

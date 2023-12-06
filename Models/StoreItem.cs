@@ -5,9 +5,7 @@ namespace final_project_it3045c.Models
         public int Id { get; set; }
         public string? ItemName { get; set; }
         public double? Price { get; set; }
-        // TODO: add 2 more properties that store items can have
         public string? ItemBrand { get; set; }
-
         public int? Quantity { get; set; }
     }
 }
