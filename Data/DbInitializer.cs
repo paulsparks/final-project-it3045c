@@ -143,10 +143,36 @@ namespace final_project_it3045c.Data
                 {
                     new() {
                         ItemName = "Bread",
-                        Price = 2.99
+                        Price = 2.99,
+                        ItemBrand = "Wonder",
+                        Quantity = 1
                         // TODO: populate with the newly added properties from StoreItem.cs after they're added
-                    }
+                    },
                     // TODO: populate this list with 4 more store items
+                    new() {
+                        ItemName = "Hot Dog",
+                        Price = 1.99,
+                        ItemBrand = "Khans",
+                        Quantity = 1
+                    },
+                    new() {
+                        ItemName = "Chips",
+                        Price = 3.99,
+                        ItemBrand = "Lays",
+                        Quantity = 1
+                    },
+                    new() {
+                        ItemName = "Milk",
+                        Price = 1.50,
+                        ItemBrand = "Fairlife",
+                        Quantity = 1
+                    },
+                    new() {
+                        ItemName = "Chocolate",
+                        Price = 2.99,
+                        ItemBrand = "Hershey",
+                        Quantity = 1
+                    }
                 };
 
                 dbContext.StoreItems.AddRange(storeItems);
